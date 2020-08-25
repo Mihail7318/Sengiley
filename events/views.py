@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import event, PostsImages
+from news.models import article
 from django.db.models import F
 
 
@@ -13,4 +14,5 @@ def events(request):
 
 def events_prev(request, pk):
     event_detail = event.objects.filter(id=pk)
-    return render(request, "detail.html",{"data":event_detail})
+    read = article.objects.all()[:5]
+    return render(request, "detail.html",{"data":event_detail, 'read':read})

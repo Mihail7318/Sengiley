@@ -23,13 +23,11 @@
           {% endfor %}
 {% endif %}
     	</div>
-        
-
-
     </div>
+{% if merop2 %}
     <div class="carousel-item">
      <div class="row">
-        {% if merop2 %}
+        
         {% for m in merop2 %}
     		<div class="col-sm"><div class="card" style="width: 18rem;">
   <img src="{{ MEDIA_URL }}{{ m.image.url }}" class="card-img-top" alt="..." id="werm">
@@ -38,12 +36,14 @@
   </div>
 </div></div>
           {% endfor %}
-{% endif %}
+
     	</div>
     </div>
+{% endif %}
+{% if merop3 %}
     <div class="carousel-item">
      <div class="row">
-        {% if merop3 %}
+        
         {% for m in merop3 %}
     		<div class="col-sm"><div class="card" style="width: 18rem;">
   <img src="{{ MEDIA_URL }}{{ m.image.url }}" class="card-img-top" alt="..." id="werm">
@@ -52,9 +52,10 @@
   </div>
 </div></div>
           {% endfor %}
-{% endif %}
+
     	</div>
     </div>
+{% endif %}
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

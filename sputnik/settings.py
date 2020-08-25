@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'afisha',
     'anons',
     'ckeditor',
+    'documents',
     'events',
     'adminlte3',
     'adminlte3_theme',
-
+    'video',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -90,8 +92,8 @@ WSGI_APPLICATION = 'sputnik.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Sputnik',
-        'USER': 'postgres',
+        'NAME': 'sengsputnik',
+        'USER': 'sputnik',
         'PASSWORD': 'hagadi12',
         'HOST': '127.0.0.1',
         'PORT': '5432',

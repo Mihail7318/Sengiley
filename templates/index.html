@@ -15,11 +15,17 @@
 </style>
 <br>
 <div class="container">
+
+
+
 	<div class="row">
 <div class="col-md-8">
 <div class="card border-primary" id="now">
   <div class="card-header bg-primary" >Новости</div>
   <div class="card-body">
+
+   
+
     <ul class="list-unstyled">
       {% if articels %}
       {% for news in articels %}
@@ -27,7 +33,8 @@
     <img src="{{ MEDIA_URL }}{{ news.image.url }}" class="mr-2" alt="..."  id="wer">
     <div class="media-body">
       <a href="news/{{ news.id }}" style="text-decoration: none; color: black;"><h5 class="mt-0 mb-1">{{ news.title }}</h5></a>
-      <p class="card-text">{{ news.text | safe | truncatewords_html:10 }}</p>
+      <p class="card-text">{{ news.text | safe | truncatewords_html:15 }}</p>
+       <a href="news/{{ news.id }}" class="card-link">Читать далее...</a>
     </div>
   </li>
   <br><br>
@@ -38,63 +45,46 @@
 </div>
 </div>
 
+
+
 <div class="col-md-4">
+  {% if vid %}
+  {% include "video.html" %}
+  {% endif %}
   {% include "korona.html" %}
   <br>
   
 {% include "afisha.html" %}
 
 <br>
-
+{% if holiday %}
 <div class="card border-light">
   <div class="card-header border-info">Праздники</div>
   <div class="card-body text-primary">
 
-
+    {% for h  in holiday %}
   	<div class="card mb-3" style="border-width: 0; border-bottom-width: 2px;">
   <div class="row no-gutters">
     <div class="col-md-4 align-middle">
-      <img src="{% static "images/main.jpg" %}" class="card-img " alt="...">
+      <img src="{{ MEDIA_URL }}{{ h.image.url }}" class="card-img " alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <a href="#" class="card-title" style="font-size: 12pt">Спящая красавица</a>
-        <p class="card-text" style="font-size: 8pt">18.00</p>
+        <a href="afisha/{{ h.id }}" class="card-title" style="font-size: 12pt">{{ h.title }}</a>
+        <p class="card-text" style="font-size: 8pt">{{ h.date_h }}</p>
       </div>
     </div>
   </div>
+</div>
+     {% endfor %}
+
+</div>
+</div>
+</div>
+{% endif %}
 </div>
 
-<div class="card mb-3" style="border-width: 0; border-bottom-width: 2px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 align-middle">
-      <img src="{% static "images/main.jpg" %}" class="card-img " alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <a href="#" class="card-title" style="font-size: 12pt">XXX Мировое господство</a>
-        <p class="card-text" style="font-size: 8pt">18.00</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="card mb-3" style="border-width: 0; border-bottom-width: 2px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 align-middle">
-      <img src="{% static "images/main.jpg" %}" class="card-img " alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <a href="#" class="card-title" style="font-size: 12pt">Без тормозов</a>
-        <p class="card-text" style="font-size: 8pt">18.00</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <br><br>

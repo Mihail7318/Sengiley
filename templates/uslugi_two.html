@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content%}
+	<div class="container ">
+  <div class="card border-light">
+    <div class="card-header bg-light"><img src="{% static "images/info.png"%}">
+    Услуги
+  </div>
+  <br>
+      {% if usl %}
+          {% for d in usl %}
+  <div class="card-body text-primary">
+    <div class="row">
+      <div class="col-md-2">{{ d.date }}</div>
+      <div class="col">
+        <a href="/usl/{{ d.id }}"><p>{{ d.title }}</p></a>
+      </div>
+    </div>
+         </div>
+{% endfor %}
+    {% endif %}
+<br>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+</body>
+</html>

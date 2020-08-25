@@ -17,17 +17,17 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" id="tab" href="{% url "afisha" %}">Афиша</a>
-          <a class="dropdown-item" id="tab" href="{% url "anons" %}">Анонсы</a>
+
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/document" id="tab">Документы</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Услуги</a>
+        <a class="nav-link" href="/usl">Услуги</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Контакты</a>
+        <a class="nav-link" href="/about">Контакты</a>
       </li>
 </nav>
 
@@ -71,6 +71,14 @@
   case 'document/':
     $("a[href^='/document']").addClass('active');
     $("title").html($("a[href^='/document']").html());
+    break; 
+  case 'usl':
+    $("a[href^='/usl']").addClass('active');
+    $("title").html($("a[href^='/usl']").html());
+    break; 
+  case 'about':
+    $("a[href^='/about']").addClass('active');
+    $("title").html($("a[href^='/about']").html());
     break; 
 
 }

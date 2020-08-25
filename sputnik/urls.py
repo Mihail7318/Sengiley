@@ -28,7 +28,10 @@ urlpatterns = [
     path('news', include('news.urls')),
     path('afisha', include('afisha.urls')),
     path('anons', include('anons.urls')),
-    path('document', views.document),
+    path('document', include('documents.urls')),
+    path('usl', views.usl),
+    path('usl/<int:pk>', views.usl_p),
+    path('about', include('contact.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

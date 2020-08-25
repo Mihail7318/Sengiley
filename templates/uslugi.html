@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content%}
+	{% if usl %}
+          {% for d in usl %}
+	<div class="container ">
+  <div class="card border-light">
+    <div class="card-header bg-light"><img src="{% static "images/info.png"%}">
+   {{ d.title }}
+  </div>
+  <br>
+  <div class="card-body text-dark">
+    
+  	{{ d.text | safe}}
+{% if d.file %}
+        <a href="{{ d.file.url }}"><p>{{ d.title }}</p></a>
+  		{% endif %}
+  		
+        
+</div>
+<br>
+</div>
+</div>
+{% endfor %}
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -22,7 +22,7 @@ class event(models.Model):
     event_text = RichTextField('Текст записи', blank=True)
     image = models.ImageField(null=False, upload_to="images/", verbose_name='Изображение')
     date = models.DateField(auto_now_add=True)
-    images = models.ManyToManyField(PostsImages)
+    images = models.ManyToManyField(PostsImages, blank=True )
 
     def __str__(self):
         return self.event_title + ' ' + self.image.url
