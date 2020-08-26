@@ -24,6 +24,7 @@
 
 	#gl{
 		color: white;
+
 	}
 	#ss{
 		text-decoration: none;
@@ -46,17 +47,21 @@
 	 <div class="row mx-lg-n5"></div>
 	</br>
 	 <div class="row mx-lg-n5">
-    <div class="col-md-7"><p class="h3" style="font-size: 14pt" id="gl">{% block site_title %}Муниципальное Учреждение Культуры Администрации <br> МО "Сенгилеевский район" Ульяновской области{% endblock %}</p></div>
+    <div class="col-md-7"><p class="h3" style="font-size: 14pt" id="gl">{% block site_title %}Муниципальное Учреждение Культуры Администрации <br> МО "Сенгилеевский район" Ульяновской области{% endblock %}</p>
+    </div>
 	<div class="col-md-2"></div>
 	<div class="col-md-3"><button type="button" class="btn btn-warning">Версия для слабовидящих</button></div>
 </div>
 	<br>
 	<div class="row mx-lg-n5">
-		<div class="col-md-5"><a id="ss" href="/"><h2  style="font-size: 38pt; font-family: Bad Script" id="gl">{% block brand %}Муниципальный культурный комплекс{% endblock %}</h2></a></div>
+		<div class="col-md-5"><p class="h3" style="color: white; font-family: Bad S; padding-left: 30px;" >Успех начинается с нами!</p>
+            <a id="ss" href="/"><h5  style="font-size: 30pt; font-family: Bad S" id="gl">{% block brand %}Муниципальный культурный комплекс{% endblock %}</h5></a>
+
+        </div>
 		<div class="col-md-3"><img src="{% static "images/main.jpg" %}" style="border-radius: 20px; height: 200px; width: 270px;"></div>
 		<div class="col-md-4"> 
-			<h2 style="font-size: 30pt; font-family: Times New Roman" id="gl">{% block phone %}
-      8(8422)2-15-54{% endblock %}</h2> <br>
+			<h2 style="font-size: 25pt; font-family: Times New Roman" id="gl">{% block phone %}
+      8(8422)2-15-61{% endblock %}</h2> <br>
 			<form class="form-inline my-2 my-lg-0" >
       <input class="form-control mr-sm-2" type="search" placeholder="Поиск по сайту" aria-label="Search" name="q">
       <button class="btn btn-dark my-2 my-sm-0" type="submit">Поиск</button>
