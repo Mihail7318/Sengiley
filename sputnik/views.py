@@ -16,7 +16,7 @@ def index(request):
     merop2 = event.objects.order_by('-date')[3:6]
     merop3 = event.objects.order_by('-date')[6:9]
     info = covid.objects.all
-    articles = article.objects.order_by('-date_a')
+    articles = article.objects.order_by('-date_a')[:10]
     afisha_list = afisha.objects.filter(date_out__gte = date_n)
     holiday_list = holiday.objects.filter(date_h__gte=date_n)
     video = Video.objects.all()
